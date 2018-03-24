@@ -1,0 +1,15 @@
+<!-- <p>
+  signup works!
+</p> -->
+<form class="form-signin" #form="ngForm" (ngSubmit)="signUp(form.value)">
+  <img class="mb-4" src="../../assets/book.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1>
+  <label for="inputUsername" class="sr-only">Email address</label>
+  <input type="text" id="inputUsername" ngModel name="username" class="form-control" placeholder="Username" required autofocus>
+  <div class="alert alert-danger" *ngIf="inputUsername.touched && inputUsername.invalid"> Username is required</div>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" ngModel name="password" class="form-control" placeholder="Password" required>
+  <div class="alert alert-danger" *ngIf="inputPassword.touched && inputPassword.invalid"> Password is required</div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</form>
